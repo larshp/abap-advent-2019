@@ -36,6 +36,53 @@ CLASS ZCL_ADVENT2019_DAY02_HVAM IMPLEMENTATION.
 
 
   METHOD execute.
+
+    DATA index TYPE i VALUE 1.
+
+    DATA position1 TYPE i.
+    DATA position2 TYPE i.
+    DATA position3 TYPE i.
+
+    DATA value1 TYPE i.
+    DATA value2 TYPE i.
+
+    DATA target TYPE i.
+    DATA opcode TYPE i.
+
+    result = integers.
+
+    DO.
+      READ TABLE result INDEX index INTO opcode.
+      ASSERT sy-subrc = 0.
+
+      CASE opcode.
+        WHEN 1 OR 2.
+          READ TABLE result INDEX index + 1 INTO position1.
+          position1 = position1 + 1.
+          READ TABLE result INDEX index + 2 INTO position2.
+          position2 = position2 + 1.
+          READ TABLE result INDEX index + 3 INTO position3.
+          position3 = position3 + 1.
+
+          READ TABLE result INDEX position1 INTO value1.
+          READ TABLE result INDEX position2 INTO value2.
+
+          IF opcode = 1.
+            value1 = value1 + value2.
+          ELSE.
+            value1 = value1 * value2.
+          ENDIF.
+
+          MODIFY result INDEX position3 FROM value1.
+        WHEN 99.
+          EXIT. " current loop
+        WHEN OTHERS.
+          ASSERT 0 = 1.
+      ENDCASE.
+
+      index = index + 4.
+    ENDDO.
+
   ENDMETHOD.
 
 

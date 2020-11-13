@@ -42,9 +42,9 @@ CLASS ltcl_test IMPLEMENTATION.
 
   METHOD test1.
 
-*    cl_abap_unit_assert=>assert_equals(
-*      act = mo_cut->output( mo_cut->execute( mo_cut->input( '1,0,0,0,99' ) ) )
-*      exp = '2,0,0,0,99' ).
+    cl_abap_unit_assert=>assert_equals(
+      act = mo_cut->output( mo_cut->execute( mo_cut->input( '1,0,0,0,99' ) ) )
+      exp = '2,0,0,0,99' ).
 
   ENDMETHOD.
 
