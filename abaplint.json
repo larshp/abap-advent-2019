@@ -106,11 +106,7 @@
     },
     "cloud_types": true,
     "colon_missing_space": true,
-    "commented_code": {
-      "exclude": [],
-      "severity": "Error",
-      "allowIncludeInFugr": true
-    },
+    "commented_code": false,
     "constructor_visibility_public": true,
     "contains_tab": {
       "exclude": [],
@@ -386,11 +382,7 @@
       "severity": "Error",
       "skipNames": []
     },
-    "unused_variables": {
-      "exclude": [],
-      "severity": "Error",
-      "skipNames": []
-    },
+    "unused_variables": false,
     "use_bool_expression": true,
     "use_line_exists": true,
     "use_new": false,
