@@ -45,7 +45,7 @@
       "communication": true,
       "statics": true,
       "systemCall": true,
-      "defaultKey": true,
+      "defaultKey": false,
       "break": true,
       "describeLines": true
     },
@@ -245,16 +245,7 @@
       "test": "^LTCL_.+$"
     },
     "local_testclass_location": true,
-    "local_variable_names": {
-      "exclude": [],
-      "severity": "Error",
-      "patternKind": "required",
-      "ignoreNames": [],
-      "ignorePatterns": [],
-      "expectedData": "^L._.+$",
-      "expectedConstant": "^LC_.+$",
-      "expectedFS": "^<L._.+>$"
-    },
+    "local_variable_names": false,
     "main_file_contents": true,
     "many_parenthesis": true,
     "max_one_statement": true,
@@ -326,7 +317,7 @@
     "parser_702_chaining": true,
     "parser_error": true,
     "parser_missing_space": true,
-    "prefer_inline": true,
+    "prefer_inline": false,
     "prefer_is_not": true,
     "prefer_returning_to_exporting": true,
     "prefer_xsdbool": true,
@@ -412,7 +403,7 @@
     },
     "use_bool_expression": true,
     "use_line_exists": true,
-    "use_new": true,
+    "use_new": false,
     "when_others_last": true,
     "whitespace_end": true,
     "xml_consistency": true
