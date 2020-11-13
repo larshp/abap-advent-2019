@@ -27,7 +27,17 @@ CLASS ltcl_test IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD output.
-* todo
+
+    DATA integers TYPE zcl_advent2019_day02_hvam=>integer_table.
+
+    APPEND 2 TO integers.
+    APPEND 4 TO integers.
+    APPEND 100 TO integers.
+
+    cl_abap_unit_assert=>assert_equals(
+      act = mo_cut->output( integers )
+      exp = '2,4,100' ).
+
   ENDMETHOD.
 
   METHOD test1.

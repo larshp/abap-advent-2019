@@ -47,7 +47,7 @@ CLASS ZCL_ADVENT2019_DAY02_HVAM IMPLEMENTATION.
       IF string IS INITIAL.
         string = string && int.
       ELSE.
-        string = string && int && ','.
+        string = string && ',' && int.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
