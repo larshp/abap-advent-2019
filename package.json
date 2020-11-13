@@ -15,7 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "@abaplint/cli": "^2.60.2",
-    "@abaplint/runtime": "^0.7.2",
-    "@abaplint/transpiler-cli": "^0.7.2"
+    "@abaplint/runtime": "^0.7.3",
+    "@abaplint/transpiler-cli": "^0.7.3"
   }
 }
