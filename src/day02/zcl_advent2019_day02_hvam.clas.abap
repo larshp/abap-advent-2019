@@ -32,7 +32,7 @@ ENDCLASS.
 
 
 
-CLASS ZCL_ADVENT2019_DAY02_HVAM IMPLEMENTATION.
+CLASS zcl_advent2019_day02_hvam IMPLEMENTATION.
 
 
   METHOD execute.
@@ -58,14 +58,19 @@ CLASS ZCL_ADVENT2019_DAY02_HVAM IMPLEMENTATION.
       CASE opcode.
         WHEN 1 OR 2.
           READ TABLE result INDEX index + 1 INTO position1.
+          ASSERT sy-subrc = 0.
           position1 = position1 + 1.
           READ TABLE result INDEX index + 2 INTO position2.
+          ASSERT sy-subrc = 0.
           position2 = position2 + 1.
           READ TABLE result INDEX index + 3 INTO position3.
+          ASSERT sy-subrc = 0.
           position3 = position3 + 1.
 
           READ TABLE result INDEX position1 INTO value1.
+          ASSERT sy-subrc = 0.
           READ TABLE result INDEX position2 INTO value2.
+          ASSERT sy-subrc = 0.
 
           IF opcode = 1.
             value1 = value1 + value2.
