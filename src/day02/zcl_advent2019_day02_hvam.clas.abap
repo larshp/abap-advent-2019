@@ -26,7 +26,7 @@ ENDCLASS.
 
 
 
-CLASS ZCL_ADVENT2019_DAY02_HVAM IMPLEMENTATION.
+CLASS zcl_advent2019_day02_hvam IMPLEMENTATION.
 
 
   METHOD input.
@@ -45,9 +45,9 @@ CLASS ZCL_ADVENT2019_DAY02_HVAM IMPLEMENTATION.
   METHOD output.
     LOOP AT integers INTO DATA(int).
       IF string IS INITIAL.
-        string = string && int.
+        string = int.
       ELSE.
-        string = string && ',' && int.
+        string = |{ string },{ int }|.
       ENDIF.
     ENDLOOP.
   ENDMETHOD.
