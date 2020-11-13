@@ -250,13 +250,7 @@
     "many_parenthesis": true,
     "max_one_statement": true,
     "message_exists": true,
-    "method_length": {
-      "exclude": [],
-      "severity": "Error",
-      "statements": 100,
-      "errorWhenEmpty": true,
-      "ignoreTestClasses": false
-    },
+    "method_length": false,
     "method_overwrites_builtin": true,
     "method_parameter_names": false,
     "mix_returning": true,
@@ -383,11 +377,7 @@
     "tabl_enhancement_category": true,
     "try_without_catch": true,
     "type_form_parameters": true,
-    "types_naming": {
-      "exclude": [],
-      "severity": "Error",
-      "pattern": "^TY_.+$"
-    },
+    "types_naming": false,
     "unknown_types": true,
     "unreachable_code": true,
     "unused_methods": true,
