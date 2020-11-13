@@ -20,13 +20,23 @@ CLASS zcl_advent2019_day02_hvam DEFINITION
         !integers     TYPE integer_table
       RETURNING
         VALUE(string) TYPE string .
+
+    METHODS execute
+      IMPORTING
+        integers      TYPE integer_table
+      RETURNING
+        VALUE(result) TYPE integer_table.
   PROTECTED SECTION.
   PRIVATE SECTION.
 ENDCLASS.
 
 
 
-CLASS zcl_advent2019_day02_hvam IMPLEMENTATION.
+CLASS ZCL_ADVENT2019_DAY02_HVAM IMPLEMENTATION.
+
+
+  METHOD execute.
+  ENDMETHOD.
 
 
   METHOD input.
@@ -46,6 +56,7 @@ CLASS zcl_advent2019_day02_hvam IMPLEMENTATION.
     LOOP AT integers INTO DATA(int).
       IF string IS INITIAL.
         string = int.
+        string = condense( string ).
       ELSE.
         string = |{ string },{ int }|.
       ENDIF.
