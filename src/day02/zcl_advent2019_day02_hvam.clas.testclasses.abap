@@ -9,7 +9,10 @@ CLASS ltcl_test DEFINITION FOR TESTING DURATION SHORT RISK LEVEL HARMLESS FINAL.
       setup,
       input FOR TESTING,
       output FOR TESTING,
-      test1 FOR TESTING.
+      test1 FOR TESTING,
+      test2 FOR TESTING,
+      test3 FOR TESTING,
+      test4 FOR TESTING.
 ENDCLASS.
 
 
@@ -45,6 +48,26 @@ CLASS ltcl_test IMPLEMENTATION.
     cl_abap_unit_assert=>assert_equals(
       act = mo_cut->output( mo_cut->execute( mo_cut->input( '1,0,0,0,99' ) ) )
       exp = '2,0,0,0,99' ).
+
+  ENDMETHOD.
+
+  METHOD test2.
+
+    cl_abap_unit_assert=>assert_equals(
+      act = mo_cut->output( mo_cut->execute( mo_cut->input( '2,3,0,3,99' ) ) )
+      exp = '2,3,0,6,99' ).
+
+  ENDMETHOD.
+
+  METHOD test3.
+
+    RETURN.
+
+  ENDMETHOD.
+
+  METHOD test4.
+
+    RETURN.
 
   ENDMETHOD.
 
