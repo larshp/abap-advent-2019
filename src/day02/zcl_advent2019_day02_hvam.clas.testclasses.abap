@@ -61,13 +61,17 @@ CLASS ltcl_test IMPLEMENTATION.
 
   METHOD test3.
 
-    RETURN.
+    cl_abap_unit_assert=>assert_equals(
+      act = mo_cut->output( mo_cut->execute( mo_cut->input( '2,4,4,5,99,0' ) ) )
+      exp = '2,4,4,5,99,9801' ).
 
   ENDMETHOD.
 
   METHOD test4.
 
-    RETURN.
+    cl_abap_unit_assert=>assert_equals(
+      act = mo_cut->output( mo_cut->execute( mo_cut->input( '1,1,1,4,99,5,6,0,99' ) ) )
+      exp = '30,1,1,4,2,5,6,0,99' ).
 
   ENDMETHOD.
 

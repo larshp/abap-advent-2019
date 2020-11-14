@@ -32,7 +32,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_advent2019_day02_hvam IMPLEMENTATION.
+CLASS ZCL_ADVENT2019_DAY02_HVAM IMPLEMENTATION.
 
 
   METHOD execute.
@@ -118,7 +118,14 @@ CLASS zcl_advent2019_day02_hvam IMPLEMENTATION.
 
   METHOD zif_advent2019_hvam~solve.
 
-    output = 'todo'.
+    DATA(integers) = input( input ).
+
+    MODIFY integers INDEX 2 FROM 12.
+    MODIFY integers INDEX 3 FROM 2.
+
+    DATA(result) = execute( integers ).
+
+    output = output( result ).
 
   ENDMETHOD.
 ENDCLASS.
