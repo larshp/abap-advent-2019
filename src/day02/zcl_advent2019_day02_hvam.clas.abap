@@ -32,7 +32,7 @@ ENDCLASS.
 
 
 
-CLASS ZCL_ADVENT2019_DAY02_HVAM IMPLEMENTATION.
+CLASS zcl_advent2019_day02_hvam IMPLEMENTATION.
 
 
   METHOD execute.
@@ -118,15 +118,39 @@ CLASS ZCL_ADVENT2019_DAY02_HVAM IMPLEMENTATION.
 
   METHOD zif_advent2019_hvam~solve.
 
+    DATA noun TYPE i.
+    DATA verb TYPE i.
+
     DATA(integers) = input( input ).
 
-    MODIFY integers INDEX 2 FROM 12.
-    MODIFY integers INDEX 3 FROM 2.
+    " PART 1
+    " MODIFY integers INDEX 2 FROM 12.
+    " MODIFY integers INDEX 3 FROM 2.
 
-    DATA(result) = execute( integers ).
+    " DATA(result) = execute( integers ).
 
-    READ TABLE result INDEX 1 INTO DATA(int).
-    output = int.
+    " READ TABLE result INDEX 1 INTO DATA(int).
+    " output = int.
+
+    " PART 2
+    DO 100 TIMES.
+      noun = sy-index + 10.
+      MODIFY integers INDEX 2 FROM noun.
+      DO 100 TIMES.
+        verb = sy-index + 10.
+        MODIFY integers INDEX 3 FROM verb.
+
+        DATA(result) = execute( integers ).
+
+        READ TABLE result INDEX 1 INTO DATA(int).
+        ASSERT sy-subrc = 0.
+
+        IF int = 19690720.
+          output = ( 100 * noun ) + verb.
+          RETURN.
+        ENDIF.
+      ENDDO.
+    ENDDO.
 
   ENDMETHOD.
 ENDCLASS.
