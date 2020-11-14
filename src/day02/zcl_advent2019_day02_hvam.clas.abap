@@ -125,7 +125,8 @@ CLASS ZCL_ADVENT2019_DAY02_HVAM IMPLEMENTATION.
 
     DATA(result) = execute( integers ).
 
-    output = output( result ).
+    READ TABLE result INDEX 1 INTO DATA(int).
+    output = int.
 
   ENDMETHOD.
 ENDCLASS.
