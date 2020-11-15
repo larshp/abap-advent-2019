@@ -1,5 +1,5 @@
-# abap-advent-2020-template
-[Advent of Code](https://adventofcode.com) 2020 - ABAP Template
+# abap-advent-2019
+[Advent of Code](https://adventofcode.com) 2019 - Testing
 
 Lets do it the difficult way! In ABAP running on [NodeJS](https://nodejs.org)
 
@@ -9,12 +9,6 @@ NodeJS 12 installed
 
 No ABAP system required, but a lot of patience is a prerequsite
 
-## Renaming
-
-After cloning this template repository, please rename all objects.
-
-This is done by changing the configuration in `abaplint.json` and then running `npm install && npm run rename`
-
 ## Commands
 
 `npm install` to install dependencies, make sure to keep file `package.json` up to date with latest dependencies
@@ -23,8 +17,8 @@ This is done by changing the configuration in `abaplint.json` and then running `
 
 `npm run downport` will downport the code to 702, into directory "downport"
 
-`npm run unit` takes downported code and runs unit tests, js code is output to folder "output"
+`npm run unit` takes downported code, transpiles it, and runs unit tests
 
 `npm test` does linting, downporting and unit testing in that sequence
 
-`./run 01` todo
+`npm run input -- 01` to run day 01 with input from `/input/day01.txt`
